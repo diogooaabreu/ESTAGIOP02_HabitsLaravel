@@ -1,0 +1,78 @@
+/* 1. Labels */
+label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-foreground);
+    /* Adicionei uma margem inferior para não ficar colado ao input */
+    margin-bottom: calc(var(--spacing) * 1);
+}
+
+/* 2. Inputs de Texto */
+.input {
+    border-radius: var(--radius-md);
+    height: calc(var(--spacing) * 10);
+    width: 100%;
+    border-width: 1px;
+    border-style: solid; /* Importante garantir que o estilo existe */
+    border-color: var(--color-border);
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+    background-color: var(--color-card);
+    color: var(--color-foreground);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.input::placeholder {
+    color: var(--color-muted-foreground);
+}
+
+.input:focus-visible {
+    outline: 0;
+    box-shadow:
+        0 0 0 calc(var(--spacing) * .5) var(--color-background),
+        0 0 0 calc(var(--spacing) * 1) var(--color-primary);
+}
+
+/* 3. Textareas */
+.textarea {
+    border-radius: var(--radius-md);
+    height: calc(var(--spacing) * 40);
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-border);
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+    background-color: var(--color-card);
+    color: var(--color-foreground);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    resize: vertical; /* Permite ao utilizador esticar apenas para baixo */
+}
+
+.textarea::placeholder {
+    color: var(--color-muted-foreground);
+}
+
+.textarea:focus-visible {
+    outline: 0;
+    box-shadow:
+        0 0 0 calc(var(--spacing) * .5) var(--color-background),
+        0 0 0 calc(var(--spacing) * 1) var(--color-primary);
+}
+
+/* 4. Inputs de Ficheiro */
+input[type=file] {
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--color-foreground);
+}
+
+/* 5. Responsividade (Media Queries) */
+@media (min-width: var(--breakpoint-md)) {
+    .input,
+    .textarea {
+        font-size: var(--text-sm);
+    }
+}

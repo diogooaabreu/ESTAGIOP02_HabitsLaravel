@@ -1,0 +1,51 @@
+/* Estilo base para a tag <button> global */
+button {
+    cursor: pointer;
+}
+
+/* Estilo para a classe base do botão (.btn) */
+.btn {
+    background: var(--color-primary);
+    border-radius: var(--radius-lg);
+    color: var(--color-primary-foreground);
+    padding-inline: calc(var(--spacing) * 3); /* Espaçamento lateral dinâmico */
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    height: calc(var(--spacing) * 8); /* Altura fixa baseada em espaçamento */
+    line-height: calc(var(--spacing) * 8); /* Centraliza o texto verticalmente */
+    display: inline-block;
+}
+
+/* Variante: Botão Outlined (.btn.btn-outlined) */
+.btn.btn-outlined {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-color: var(--color-border);
+    color: var(--color-foreground);
+}
+
+/* Efeito Hover para a variante Outlined */
+.btn.btn-outlined:hover {
+    /* Escurece ligeiramente a cor de fundo com preto 25% */
+    background: color-mix(in srgb, black 25%, var(--color-input));
+}
+
+/* Variante: Botão Ghost (.btn.btn-ghost) */
+.btn.btn-ghost {
+    background: transparent;
+}
+
+/* Comportamento quando o botão tem um ícone SVG (.btn:has(>svg)) */
+.btn:has(>svg) {
+    display: flex;
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    column-gap: calc(var(--spacing) * 2); /* Espaço entre o ícone e o texto */
+}
+
+/* Efeito Hover para o botão padrão (.btn:hover) */
+.btn:hover {
+    /* Escurece a cor primária com preto 10% */
+    background: color-mix(in srgb, black 10%, var(--color-primary));
+    text-decoration: none;
+}
